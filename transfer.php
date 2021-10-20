@@ -38,11 +38,11 @@ if(isset($_POST['submit']))
                         mysqli_query($conn,$sql);  
                         $sender = $sql1['name'];
                         $receiver = $sql2['name'];
-                        $sql = "INSERT INTO transaction(`sender`, `receiver`, `balance`) VALUES ('$sender','$receiver','$amount')";
+                        $sql = "INSERT INTO history(`sender`, `receiver`, `balance`) VALUES ('$sender','$receiver','$amount')";
                         $query=mysqli_query($conn,$sql);
                         if($query){
                              echo "<script> alert('YOUR TRANSACTION IS SUCCESSFUL');
-                                             window.location='usertable.php';
+                                             window.location='history.php';
                                    </script>";    
                         }
                         $newbalance= 0;
@@ -163,5 +163,4 @@ if(isset($_POST['submit']))
     </div>
 </body>
 </html>
-    </body>
-</html>
+  
